@@ -1,6 +1,6 @@
 {
   "name": "EventHub - Premium Marketplace",
-  "description": "A high-end event service marketplace for GenZ and Millennials, offering venues, photography, catering, and decor with AI-powered planning.",
+  "description": "A high-end event service marketplace for GenZ and Millennials, offering venues, photography, catering, and decor.",
   "requestFramePermissions": [
     "geolocation"
   ]

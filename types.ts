@@ -8,6 +8,15 @@ export enum ServiceCategory {
   PLANNER = 'Event Planner'
 }
 
+export interface City {
+  id: string;
+  name: string;
+  state: string;
+  illustration: string;
+  lat: number;
+  lng: number;
+}
+
 export interface Service {
   id: string;
   name: string;
@@ -16,9 +25,11 @@ export interface Service {
   rating: number;
   reviewsCount: number;
   location: string;
+  cityId: string;
   image: string;
   description: string;
   features: string[];
+  isAvailable: boolean;
 }
 
 export interface CartItem extends Service {
