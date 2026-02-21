@@ -24,7 +24,6 @@ const Listing: React.FC<ListingProps> = ({ currentCityId }) => {
   const filteredServices = useMemo(() => {
     let list = [...MOCK_SERVICES];
     
-    // Global search filter
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       list = list.filter(s => 
@@ -35,17 +34,14 @@ const Listing: React.FC<ListingProps> = ({ currentCityId }) => {
       );
     }
     
-    // City filter
     if (currentCityId) {
       list = list.filter(s => s.cityId === currentCityId);
     }
     
-    // Category filter
     if (selectedCategory) {
       list = list.filter(s => s.category === selectedCategory);
     }
 
-    // Sort
     if (sortBy === 'rating') {
       list.sort((a, b) => b.rating - a.rating);
     } else if (sortBy === 'price') {
@@ -56,7 +52,6 @@ const Listing: React.FC<ListingProps> = ({ currentCityId }) => {
 
   return (
     <div className="flex flex-col min-h-screen animate-fadeIn pb-20">
-      {/* Filter Bar */}
       <div className="sticky top-16 bg-gray-50/80 backdrop-blur-md z-40 py-4 px-4 md:px-0 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
@@ -92,7 +87,6 @@ const Listing: React.FC<ListingProps> = ({ currentCityId }) => {
         </div>
       </div>
 
-      {/* Results Header */}
       <div className="px-4 md:px-0 mt-8 mb-6">
         <h2 className="text-2xl font-black text-gray-800 uppercase tracking-tighter">
           {searchQuery ? `Results for "${searchQuery}"` : (selectedCategory ? `${selectedCategory}s` : 'All Services')}
@@ -102,7 +96,6 @@ const Listing: React.FC<ListingProps> = ({ currentCityId }) => {
         </h2>
       </div>
 
-      {/* List Grid */}
       <div className="px-4 md:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {filteredServices.length > 0 ? (
           filteredServices.map((service) => (

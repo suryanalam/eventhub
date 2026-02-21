@@ -1,0 +1,75 @@
+body {
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  scroll-behavior: smooth;
+}
+
+.phonepe-gradient {
+  background: linear-gradient(135deg, #6739B7 0%, #512DA8 100%);
+}
+
+.phonepe-text {
+  color: #6739B7;
+}
+
+.phonepe-bg {
+  background-color: #6739B7;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes bounce-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 1s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s infinite ease-in-out;
+}

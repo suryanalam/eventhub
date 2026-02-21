@@ -168,7 +168,6 @@ const Layout: React.FC<LayoutProps> = ({ children, currentCity, onCityChange }) 
         </div>
       )}
 
-      {/* Main Content Area */}
       <main className="flex-1 w-full max-w-7xl mx-auto md:px-4 pb-24 md:pb-12 pt-4">
         {!currentCity && isHome ? (
            <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
@@ -185,7 +184,6 @@ const Layout: React.FC<LayoutProps> = ({ children, currentCity, onCityChange }) 
         ) : children}
       </main>
 
-      {/* City Selector Modal */}
       {isCityModalOpen && (
         <CitySelector 
           onSelect={handleCitySelect} 
@@ -194,7 +192,6 @@ const Layout: React.FC<LayoutProps> = ({ children, currentCity, onCityChange }) 
         />
       )}
 
-      {/* Responsive Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around py-2 z-50 md:hidden shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
         {navItems.map((item) => (
           <button 
